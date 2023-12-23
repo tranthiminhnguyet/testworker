@@ -10,7 +10,7 @@
     Hello world
     <button onclick="callWorker()">Gọi worker</button>
     <script>
-        var worker = new Worker("/W.js");
+        var worker = new Worker("./W.js");
         worker.onmessage = function(e) {
         console.log('Worker đã trả về:', e.data);
         };
