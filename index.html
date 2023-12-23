@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <script>
+    
+  </script>
+  <body>
+    Hello world
+    <button onclick="callWorker()">Gọi worker</button>
+    <script>
+        var worker = new Worker("/W.js");
+        worker.onmessage = function(e) {
+        console.log('Worker đã trả về:', e.data);
+        };
+      function callWorker() {
+        worker.postMessage({ prefix: '0000', suffix: '', checksum: false, c: 10, cl: 5 });
+      }
+    </script>
+  </body>
+</html>
